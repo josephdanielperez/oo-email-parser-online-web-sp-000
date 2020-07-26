@@ -11,7 +11,7 @@ class EmailParser
   end
 
   def parse
-    emails.delete(',').split.uniq
+    emails.split(/[,?\s]/).select{|email| email != ""}.uniq
   end
 
 end
